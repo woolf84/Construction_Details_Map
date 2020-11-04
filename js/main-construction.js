@@ -98,8 +98,8 @@ function buildDetailPopup(datapoints,feature){
     });
 
     var allLayers = {
-        "Details": constructionPoints,
-        "Details, by Tract": constructionTracts
+        "Details": constructionLayer,
+        "Details, by Tract": tractsLayer
     };
 
     var legend = L.control({position: 'bottomright'});
@@ -107,7 +107,7 @@ function buildDetailPopup(datapoints,feature){
     legend.onAdd = function (map) {
 
         var div = L.DomUtil.create('div', 'info legend'),
-            grades = [3475, 1262, 789, 466, 257, 110, 1, 0],
+            grades = [0, 1, 110, 257, 465, 789, 1262, 3475],
             labels = [];
 
         // loop through our density intervals and generate a label with a colored square for each interval
