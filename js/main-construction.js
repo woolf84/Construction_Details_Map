@@ -17,7 +17,7 @@ var constructionPoints = $.ajax({
 });
 
 var constructionTracts = $.ajax({
-    url: "data/Details_C_CensusTracts.geojson",
+    url: "data/Details_C_CensusTracts_Sums.geojson",
     dataType: "json",
     success: console.log("details tracts successfully loaded."),
     error: function(xhr) {
@@ -63,7 +63,9 @@ function style(feature) {
 }; 
 
 function onEachTract(feature, layer) {
-    layer.bindPopup("<strong>Details in this census tract</strong>: " + feature.properties.NUMPOINTS);
+    layer.bindPopup("<strong>Details in this census tract</strong>: " + feature.properties.NUMPOINTS + 
+    "<br><strong>Percent of details in this tract: " + feature.properties.PERCENT +
+    "<br><strong>Amount paid to cops working details: " + feature.properties.PAY_AMOUNT);
 };
 
 //function for popup
