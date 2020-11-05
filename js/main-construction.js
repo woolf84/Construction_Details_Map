@@ -63,9 +63,21 @@ function style(feature) {
 }; 
 
 function onEachTract(feature, layer) {
+
+    var formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      
+        // These options are needed to round to whole numbers if that's what you want.
+        //minimumFractionDigits: 0,
+        //maximumFractionDigits: 0,
+    });
+    var pay = formatter(feature.properties.PAY_AMOUNT)
+    var percent = ((feature.properties.PERCENT)*100).toFixed(2)
+
     layer.bindPopup("<strong>Details in this census tract</strong>: " + feature.properties.NUMPOINTS + 
-    "<br><strong>Percent of details in this tract: " + feature.properties.PERCENT +
-    "<br><strong>Amount paid to cops working details: " + feature.properties.PAY_AMOUNT);
+    "<br><strong>Percent of details in this tract</strong>: " + percent +
+    "<br><strong>Amount paid to cops working details</strong>: " + pay);
 };
 
 //function for popup
