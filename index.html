@@ -15,6 +15,7 @@
 
 		<!-- grabs Leaflet's stylesheet --> 
 		<link rel="stylesheet" href="lib/leaflet/leaflet.css">
+		<link rel="stylesheet" href="src/L.Control.Sidebar.css" />
 
 		<!-- grabs jQuery's stylesheet --> 
 		<link href="lib/jquery-ui/jquery-ui.css" rel="stylesheet">
@@ -22,7 +23,7 @@
 		<!-- 👇 grabs the Leaflet javascript library -- all the stuff that does the mappy magic  --> 
 		<script type="text/javascript"  src ="lib/leaflet/leaflet.js"></script>
 
-		<!-- points to our own custom style sheet so we can make things look snazzy --> 
+		<!-- points to our own custom style sheet--> 
 		<link href="css/style.css" rel="stylesheet">
   </head>
 
@@ -30,15 +31,35 @@
 	
 	<!-- container for the map, with custom id name "#map" --> 
 	<div id = "sidebar">
-		<div id = "sidebar-content">   
-		   <h2>BPD Construction details, 2019.</h2>
-			 <p>This is a work in progress.</p>
-		</div>
-	  </div>
+		<h1>What’s the Deal with Construction Details?</h1>
+		<h2>A Perk for Police Could Be Jobs for Your Family</h2>
+		<h3>What are construction details? </h3>
+		<p>We’ve all seen police in yellow vests at construction sites, telephone and electric work, and other street work. These cops aren’t on duty. They are getting paid by private companies through the city to direct traffic. A state law passed in 2008 says that these flagger jobs, like they are in every other state, are open to civilian flaggers.</p>
+		<h3>Working details is a perk that allows officers to make some extra money.</h3>
+		<ul style="list-style-type:disc;">
+			<li>In 2019, 1,357 BPD employees worked construction details working a total of more than 400,000 hours.</li>
+			<li>The average wage for cops from construction details was $19,188.67. The median wage earned was even lower at $11,615.</li>
+			<li>The average total pay for cops working details was $172,500. Without construction details, that average would still be $153,000.</li>
+			<li>Some cops, however, work what amounts to a second job earning up more than $100,000 on top of their regular salaries and overtime. </li>
+		</ul>
+		<h3>By moving details out of the Police Department, the city could create a new department with over 200 new, middle-class jobs for people most harmed by policing.</h3>
+		<ul style="list-style-type:disc;">
+			<li>At $26,000,000, the money from construction details is almost as large as the entire budgets of the Parks Department ($27,000,000) and the Boston Center for Youth and Families ($28,000,000).</li>
+			<li>These wages could provide up to 280 full time union jobs paying the median wage of $68,000 plus benefits.</li>
+		</ul>
+		<h3>These jobs would create a significant investment in our communities.</h3>
+		<ul style="list-style-type:disc;">
+			<li>20% of details occur in Dorchester and Roxbury.</li>
+			<li>Hiring for details must prioritize people who have been most impacted by policing, people with CORIs, and formerly incarcerated people.</li>
+			<li>Details staffed by residents who take pride in their own neighborhood and know their neighborhoods will enhance public safety.</li>
+		</ul>
+		<p>All the data comes from the <a href='https://data.boston.gov/dataset/employee-earnings-report'>2019 Employee Earning Report</a>, the details data released on <a href='https://www.wokewindows.org'>Woke Windows</a>, and the <a href='https://www.boston.gov/departments/budget'>city budgets.</a></p>
+	</div>
 	
 	<div id="map"></div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.js"integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
+	<script type= "text/javascript" src="src/L.Control.Sidebar.js"></script>
 	<script type= "text/javascript" src = "js/main-construction.js"> </script>
 
 </body>

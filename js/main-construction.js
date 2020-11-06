@@ -40,6 +40,17 @@ $.when(constructionTracts, constructionPoints).done(function() {
 		ext: 'png'
 }).addTo(map);
 
+var sidebar = L.control.sidebar('sidebar', {
+	closeButton: false,
+	position: 'left'
+});
+
+map.addControl(sidebar);
+
+setTimeout(function () {
+	sidebar.show();
+}, 500);
+
 function getColor(d) {
     return d > 3475 ? '#800026' :
            d > 1262  ? '#BD0026' :
