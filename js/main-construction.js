@@ -122,8 +122,15 @@ function buildDetailPopup(datapoints,feature){
         }
     });
 
+//Create markercluster groups for all the layers. Add a keypress listener for each cluster
+	var constructionMarkers = L.markerClusterGroup();
+	constructionMarkers.addLayer(constructionLayer);
+	constructionMarkers.on('clusterkeypress', function (a) {
+		a.layer.zoomToBounds();
+	});
+
     var allLayers = {
-        "Details": constructionLayer,
+        "Details": constructionMarkers,
         "Details, by Tract": tractsLayer
     };
 
