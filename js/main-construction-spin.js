@@ -13,12 +13,12 @@ var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
 }).addTo(map);
 
 var zoomControl = L.control.zoom({
-    position: 'topright'
+    position: 'bottomright'
 });
 map.addControl(zoomControl);
 
 var loadingControl = L.Control.loading({
-    position: 'topright',
+    position: 'bottomright',
     zoomControl: zoomControl
 });
 map.addControl(loadingControl);
