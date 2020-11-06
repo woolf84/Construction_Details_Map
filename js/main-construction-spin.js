@@ -3,8 +3,7 @@ var map = L.map('map',{
     zoom: 14,
     minZoom:4,
     maxZoom: 21,
-    zoomControl:false,
-    loadingControl: true
+    zoomControl: false,
 });
 
 var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -12,6 +11,17 @@ var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
     maxZoom: 21,
     ext: 'png'
 }).addTo(map);
+
+var zoomControl = L.control.zoom({
+    position: 'topright'
+});
+map.addControl(zoomControl);
+
+var loadingControl = L.Control.loading({
+    position: 'topright',
+    zoomControl: zoomControl
+});
+map.addControl(loadingControl);
 
 var sidebar = L.control.sidebar('sidebar', {
 closeButton: false,
@@ -147,7 +157,7 @@ function buildDetailPopup(datapoints,feature){
         for (var i = 0; i < grades.length; i++) {
             div.innerHTML +=
                 '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-                grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + 'construction details <br>' : '+');
+                grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + ' details <br>' : '+');
         }
 
         return div;
