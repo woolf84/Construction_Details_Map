@@ -33,19 +33,6 @@ body {
   overflow-x:hidden;
 }
 
-#sidebar{
-  position: absolute;
-  width: 30%;
-  height:80%;
-  background-color: #FFFAFA;
-  border-style: solid;
-  border-width: 5px;
-  border-color: #eb001a;
-  z-index: 999999;
-  overflow-y: scroll;
-}
-
-#sidebar-content{
-  margin-left: 10%;
-  margin-right: 10%;
+body > #sidebar {
+  display: none;
 }
