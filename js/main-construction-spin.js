@@ -3,7 +3,8 @@ var map = L.map('map',{
     zoom: 14,
     minZoom:4,
     maxZoom: 21,
-    zoomControl:false
+    zoomControl:false,
+    loadingControl: true
 });
 
 var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -11,8 +12,6 @@ var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
     maxZoom: 21,
     ext: 'png'
 }).addTo(map);
-
-map.spin(true);
 
 var sidebar = L.control.sidebar('sidebar', {
 closeButton: false,
@@ -53,9 +52,6 @@ var constructionTracts = $.ajax({
 });
 
 $.when(constructionTracts, constructionPoints).done(function() {
-    
-map.spin(false);
-
 function getColor(d) {
     return d > 3475 ? '#800026' :
            d > 1262  ? '#BD0026' :
