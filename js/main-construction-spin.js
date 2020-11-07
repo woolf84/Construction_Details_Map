@@ -158,7 +158,7 @@ function buildDetailPopup(datapoints,feature){
         for (var i = 0; i < grades.length; i++) {
             div.innerHTML +=
                 '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-                grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + ' details <br>' : '+');
+                grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + ' details <br>' : '+ details');
         }
 
         return div;
@@ -166,7 +166,7 @@ function buildDetailPopup(datapoints,feature){
 
     legend.addTo(map);
     L.control.layers(null, allLayers, { collapsed: false }).addTo(map);
-    
+
     //remove the loading sign
     $("#loading").remove();
 });
