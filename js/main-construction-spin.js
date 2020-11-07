@@ -166,5 +166,7 @@ function buildDetailPopup(datapoints,feature){
 
     legend.addTo(map);
     L.control.layers(null, allLayers, { collapsed: false }).addTo(map);
+    
+    //remove the loading sign
     $("#loading").remove();
 });
