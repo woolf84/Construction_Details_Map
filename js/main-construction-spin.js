@@ -17,12 +17,13 @@ var zoomControl = L.control.zoom({
 });
 map.addControl(zoomControl);
 
+/*
 var loadingControl = L.Control.loading({
     position: 'bottomright',
     zoomControl: zoomControl
 });
 map.addControl(loadingControl);
-
+*/
 var sidebar = L.control.sidebar('sidebar', {
 closeButton: false,
 position: 'left'
@@ -165,4 +166,5 @@ function buildDetailPopup(datapoints,feature){
 
     legend.addTo(map);
     L.control.layers(null, allLayers, { collapsed: false }).addTo(map);
+    $("#loading").remove();
 });
