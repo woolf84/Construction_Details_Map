@@ -21,7 +21,8 @@ map.addControl(zoomControl);
 
 var credits = L.control.attribution({prefix: '<a href="https://leafletjs.com">Leaflet</a>.', position: 'bottomright'});
 credits.addAttribution('Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>');
-map.addControl(credits);
+//map.addControl(credits);
+credits.addTo(map);
 
 var sidebar = L.control.sidebar('sidebar', {
 closeButton: false,
