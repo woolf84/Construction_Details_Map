@@ -4,6 +4,7 @@ var map = L.map('map',{
     minZoom:4,
     maxZoom: 19,
     zoomControl: false,
+    attributionControl: false,
 });
 
 var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -14,17 +15,11 @@ var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
 }).addTo(map);
 
 var zoomControl = L.control.zoom({
-    position: 'topright'
+    position: 'bottomright'
 });
 map.addControl(zoomControl);
+map.addControl(L.control.attribution({position: 'bottomright'}));
 
-/*
-var loadingControl = L.Control.loading({
-    position: 'bottomright',
-    zoomControl: zoomControl
-});
-map.addControl(loadingControl);
-*/
 var sidebar = L.control.sidebar('sidebar', {
 closeButton: false,
 position: 'left'
