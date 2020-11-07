@@ -100,9 +100,9 @@ function onEachTract(feature, layer) {
     var pay = formatter.format(feature.properties.PAY_AMOUNT);
     var percent = ((feature.properties.PERCENT)*100).toFixed(2);
 
-    layer.bindPopup("<strong>Details in this census tract</strong>: " + feature.properties.NUMPOINTS + 
-    "<br><strong>Percent of details in this tract</strong>: " + percent +
-    "<br><strong>Amount paid to cops working details</strong>: " + pay);
+    layer.bindPopup("<strong>Details in this census tract in 2019</strong>: " + feature.properties.NUMPOINTS + 
+    "<br><strong>Percent of details in this tract in 2019</strong>: " + percent +
+    "<br><strong>Amount paid to cops working details in 2019</strong>: " + pay);
 };
 
 //function for popup
